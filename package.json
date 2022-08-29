@@ -1,0 +1,34 @@
+{
+  "name": "asher",
+  "version": "0.0.1",
+  "description": "MERN Stack Chat App with Socket.IO",
+  "main": "server.js",
+  "scripts": {
+    "installSerevrDep": "npm install --prefix server",
+    "installClientDep": "npm install --prefix client",
+    "buildClient": "npm run build --prefix client",
+    "buildServer": "npm run build --prefix server",
+    "startServer": "npm run start --prefix server",
+    "install": "npm run installSerevrDep && npm run installClientDep",
+    "build": "npm run buildServer && npm run buildClient",
+    "start": "npm run startServer"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hamzagh1998/Asher.git"
+  },
+  "keywords": [
+    "chat app",
+    "MERN stack",
+    "Socket.io"
+  ],
+  "author": "Hamza Ghenimi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hamzagh1998/Asher/issues"
+  },
+  "homepage": "https://github.com/hamzagh1998/Asher#readme"
+}
