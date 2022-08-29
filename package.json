@@ -4,7 +4,7 @@
   "description": "MERN Stack Chat App with Socket.IO",
   "main": "server.js",
   "scripts": {
-    "installSerevrDep": "npm install --prefix server",
+    "installSerevrDep": "npm install --production=false --prefix server",
     "installClientDep": "npm install --prefix client",
     "buildClient": "npm run build --prefix client",
     "buildServer": "npm run build --prefix server",

@@ -7,7 +7,8 @@
     "watch": "NODE_ENV=development nodemon api/v1/server.ts",
     "local": "NODE_ENV=local nodemon api/v1/server.ts",
     "start": "NODE_ENV=production node dist/v1/server.js",
-    "build": "tsc -p ."
+    "build": "tsc",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
