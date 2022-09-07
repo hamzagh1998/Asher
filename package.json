@@ -30,8 +30,5 @@
   "bugs": {
     "url": "https://github.com/hamzagh1998/Asher/issues"
   },
-  "homepage": "https://github.com/hamzagh1998/Asher#readme",
-  "dependencies": {
-    "express-async-handler": "^1.2.0"
-  }
+  "homepage": "https://github.com/hamzagh1998/Asher#readme"
 }
