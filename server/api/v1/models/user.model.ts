@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
+import bcrypt from "bcrypt";
 
 import { UserInterface } from "../interfaces"; 
-
 
 const UserSchema = new Schema<UserInterface>(
   {
@@ -17,7 +17,7 @@ const UserSchema = new Schema<UserInterface>(
       type: Boolean,
       required: true,
       default: false,
-    },
+    }
   },
   { timestamps: true }
 );

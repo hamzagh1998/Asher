@@ -5,6 +5,9 @@ import helmet from "helmet";
 import cors from "cors";
 import morgan from "morgan";
 
+import { errorHandler } from "./middlewares";
+import { authRouter } from "./routers/auth/auth.router";
+
 const app = express();
 
 app.use(cors());
@@ -24,11 +27,12 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(express.static(path.join(__dirname, "..", "..", "public")));
 
-// app.use("/api/v1/auth", AuthRouter);
-// app.use("/api/v1/users", UserRouter);
+// Error Handling middleware
+app.use(errorHandler);
 
-// custom middleware
-// app.use(errorCatcher)
+// Routers
+app.use("/api/v1/auth", authRouter);
+// app.use("/api/v1/users", UserRouter);
 
 app.get("/*", (req: Request, res: Response) => {
   res.sendFile(path.join(__dirname, "..", "..", "public", "index.html"));
