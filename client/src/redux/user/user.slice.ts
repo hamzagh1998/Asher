@@ -10,7 +10,7 @@ interface IUserState {
   isLoading: boolean;
 };
 
-const initialState: IUserState = {
+export const initialState: IUserState = {
   id: null,
   name: null,
   email: null,

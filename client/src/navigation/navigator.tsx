@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { Routes, useLocation, useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../hooks/store.hooks";
 
-import { setIsloading, setUserData } from "../redux/user/user.slice";
+import { setIsloading, setUserData, initialState } from "../redux/user/user.slice";
+
+import { useAppDispatch, useAppSelector } from "../hooks/store.hooks";
+import { useLocalStorage } from "../hooks/use-local-storage.hook";
 
 import { authNavigator } from "./auth.navigator";
 import { chatNavigator } from "./chat.navigator";
@@ -21,8 +23,10 @@ export function Navigator() {
   const protectedRoutes = ["/", "/me", "/users", "/chat-detail"];
   const authRoutes = ["/auth"];
 
+  
+  const [userData, _] = useLocalStorage("userData", null);
+
   useEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("userData")!);
     userData
       ? dispatch(setUserData(userData))
       : protectedRoutes.includes(pathname) && navigate("/auth");
